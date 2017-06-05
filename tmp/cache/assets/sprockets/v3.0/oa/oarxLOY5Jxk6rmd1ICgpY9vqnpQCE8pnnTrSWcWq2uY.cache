@@ -1,0 +1,9 @@
+I"(function() {
+  jQuery(document).on('turbolinks:load', function() {
+    return ZiggeoApi.Events.on("upload_progress", function(uploaded, total, data) {
+      return $('progress').removeClass('hidden-xs-up').attr('value', (uploaded / total) * 100);
+    });
+  });
+
+}).call(this);
+:ET

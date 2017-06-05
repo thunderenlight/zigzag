@@ -1,0 +1,12 @@
+I"}(function() {
+  jQuery(document).on('tubrolinks:load', function() {
+    ZiggeoApi.Events.on("upload_progress", function(uploaded, total, data) {
+      return $('progress').removeClass('hidden-xs-up').attr('value', (uploaded / total) * 100);
+    });
+    return ZiggeoApi.Events.on("submitted", function(data) {
+      return window.location.href = '/';
+    });
+  });
+
+}).call(this);
+:ET
