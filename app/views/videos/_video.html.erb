@@ -4,11 +4,12 @@
 				ziggeo-width="320"
 				ziggeo-height="240" ziggeo-popup>
 		</ziggeo>
+		<p> <%= link_to 'Delete', video_path(video.uid), method: :delete %></p>
 
-	<p>
-		<strong>Duration:</strong> <%= video.duration %>s <br>
-		<strong>Created:</strong> <%= video.name %>
-	</p>
+		<p>
+			<strong>Duration:</strong> <%= video.duration %>s <br>
+			<strong>Created:</strong> <%= video.ziggeo_created_at %>
+		</p>
 		
 	</div>
 	

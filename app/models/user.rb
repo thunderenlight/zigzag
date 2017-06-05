@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   before_create -> { self.uid = generate_uid }
 
+  has_many :videos, dependant: :destroy
 	private
 
 	def generate_uid
