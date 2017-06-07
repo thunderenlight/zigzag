@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   belongs_to :user
+  
   validates :uid, presence: true, uniqueness: true
 
   def self.from_api(data)

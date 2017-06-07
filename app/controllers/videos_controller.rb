@@ -1,8 +1,14 @@
 class VideosController < ApplicationController
 
+	def new
+		
+	end
+
 	def index
 		@videos = current_user.videos.where(approved: true)
 		# puts "#{ziggeo.streams.get(ENV['ZIGGEO_KEY'], ENV['ZIGGEO_KEY'])}"
+		#ziggeo = Ziggeo.new(ENV['ZIGGEO_KEY'], ENV['ZIGGEO_SECRET'], ENV['ZIGGEO_ENCRYPTION'])
+		#@videos = ziggeo.videos.index(tags: current_user.uid)
 	end
 
 

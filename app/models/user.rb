@@ -3,10 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
+  has_many :videos, dependent: :destroy
+
+  validates :email, presence: true
+
   before_create -> { self.uid = generate_uid }
 
-  has_many :videos, dependant: :destroy
-	private
+  private
 
 	def generate_uid
 	  loop do
